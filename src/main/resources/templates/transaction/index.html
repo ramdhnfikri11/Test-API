@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Data</title>
+</head>
+<body>
+    <div>
+        <a th:href="@{transaction/form}">CREATE</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Club Offering</th>
+                    <th>Player Name</th>
+                    <th>date</th>
+                    <th>bid</th>
+                    <th>Transfer Info</th>
+                    <th>Contract</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="transaction: ${transactions}">
+                    <td th:text="${transaction.transaction_id}">
+                    <td th:text="${transaction.club.name}">
+                    <td th:text="${transaction.player.name}">
+                    <td th:text="${transaction.date}">
+                    <td th:text="${transaction.bid}">
+                    <td th:text="${transaction.info}">
+                    <td th:text="${transaction.contract}">
+                    <td th:text="${transaction.status}">
+                    <td>
+                        <a th:href="@{transaction/form/{id} (id = ${transaction.transaction_id})}">Edit</a>
+                        <form th:action="@{/transaction/delete/{id} (id = ${transaction.transaction_id})}" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

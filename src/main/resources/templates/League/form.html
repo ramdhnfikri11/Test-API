@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CREATE</title>
+</head>
+<body>
+    <div>
+        <form th:action="@{/League/save}" method="post" th:object="${league}">
+            <input id="id" name="league_id" th:field="*{league_id}" type="text">
+            <input id="name" placeholder="name" name="name" th:field="*{name}" type="text">
+            <button type="submit">submit</button>
+        </form>
+    </div>
+</body>
+</html>

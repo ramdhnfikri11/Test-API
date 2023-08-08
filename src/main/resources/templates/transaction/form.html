@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CREATE</title>
+</head>
+<body>
+    <div>
+        <form th:action="@{/transaction/save}" method="post" th:object="${transaction}">
+            <!-- <input id="id" name="transaction_id" th:field="*{transaction_id}" type="text" hidden> -->
+            <!-- <select th:field="*{club}">
+                <option th:each="club :${clubs}" th:value="${club.club_id}" th:selected="${club.club_id}" th:text="${club.name}"></option>
+            </select>
+            <select th:field="*{player}">
+                <option th:each="player :${players}" th:value="${player.player_id}" th:selected="${player.player_id}" th:text="${player.name}"></option>
+            </select> -->
+            <input id="transaction_id" placeholder="transaction_id" name="transaction_id" th:field="*{transaction_id}" type="text">
+            <input id="club" placeholder="club" name="club" th:field="*{club}" type="text">
+            <input id="player" placeholder="player" name="player" th:field="*{player}" type="text">
+            <input id="date" placeholder="date" name="date" th:field="*{date}" type="text">
+            <input id="bid" placeholder="bid" name="bid" th:field="*{bid}" type="text">
+            <input id="info" placeholder="info" name="info" th:field="*{info}" type="text">
+            <input id="contract" placeholder="contract" name="contract" th:field="*{contract}" type="text">
+            <input id="status" placeholder="status" name="status" th:field="*{status}" type="text">
+            <!-- <select th:field="*{status}">
+                <option value="pending" th:selected="pending">pending</option>
+                <option value="accepted">accepted</option>
+                <option value="rejected">rejected</option>
+            </select> -->
+            <button type="submit">submit</button>
+        </form>
+    </div>
+</body>
+</html>

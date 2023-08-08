@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CREATE</title>
+</head>
+<body>
+    <div>
+        <form th:action="@{/club/save}" method="post" th:object="${club}">
+            <input id="id" name="club_id" th:field="*{club_id}" type="text" hidden>
+            <input id="name" placeholder="name" name="name" th:field="*{name}" type="text">
+            <select th:field="*{league}">
+                <option th:each="league :${leagues}" th:value="${league.league_id}" th:selected="${league.league_id}" th:text="${league.name}"></option>
+            </select>
+            <button type="submit">submit</button>
+        </form>
+    </div>
+</body>
+</html>

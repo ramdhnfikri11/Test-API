@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<div>
+    <a th:href="@{League/form}">CREATE</a>
+    <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="league: ${leagues}">
+            <td th:text="${league.league_id}">
+            <td th:text="${league.name}">
+            <td>
+                <a th:href="@{League/form/{id} (id = ${league.league_id})}">Edit</a>
+                <form th:action="@{/League/delete/{id} (id = ${league.league_id})}" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+</body>
+</html>
