@@ -37,11 +37,11 @@ public class TransactionController {
         if(id != null){
             model.addAttribute("clubs", clubService.Get());
             model.addAttribute("players", playerService.Get());
-            model.addAttribute("transactions", transactionService.Get(id));
+            model.addAttribute("transaction", transactionService.Get(id));
         }else{
             model.addAttribute("clubs", clubService.Get());
             model.addAttribute("players", playerService.Get());
-            model.addAttribute("transactions", new Transaction());
+            model.addAttribute("transaction", new Transaction());
         }
         return "transaction/form";
     }
@@ -50,7 +50,7 @@ public class TransactionController {
     public String submit(Transaction transaction){
         Boolean result = transactionService.Save(transaction);
         if(result){
-            return "redirect:transaction";
+            return "redirect:/transaction";
         }else{
             return "transaction/form";
         }

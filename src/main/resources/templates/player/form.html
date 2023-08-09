@@ -8,7 +8,7 @@
         <form th:action="@{/player/save}" method="post" th:object="${player}">
             <input id="id" name="player_id" th:field="*{player_id}" type="text" hidden>
             <input id="name" placeholder="name" name="name" th:field="*{name}" type="text">
-            <select th:field="*club">
+            <select th:field="*{club}">
                 <option th:each="club :${clubs}" th:value="${club.club_id}" th:selected="${club.club_id}" th:text="${club.name}"></option>
             </select>
             <input id="position" placeholder="position" name="position" th:field="*{position}" type="text">
