@@ -21,7 +21,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public Transaction Get(Integer id) {
-        return transactionRepository.findById(id).orElseThrow();
+        return transactionRepository.findById(id).orElseThrow(null);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public Boolean Delete(Integer id) {
         transactionRepository.deleteById(id);
-        return transactionRepository.findById(id).isPresent();
+        return !transactionRepository.findById(id).isPresent();
     }
     
 }

@@ -33,6 +33,6 @@ public class ClubServiceImpl implements ClubService {
     @Override
     public Boolean Delete(Integer id) {
         clubRepository.deleteById(id);
-        return clubRepository.findById(id).isPresent();
+        return !clubRepository.findById(id).isPresent();
     }
 }

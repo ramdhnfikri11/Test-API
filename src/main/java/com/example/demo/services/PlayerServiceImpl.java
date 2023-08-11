@@ -33,7 +33,7 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public Boolean Delete(Integer id) {
         playerRepository.deleteById(id);
-        return playerRepository.findById(id).isPresent();
+        return !playerRepository.findById(id).isPresent();
     }
     
 }

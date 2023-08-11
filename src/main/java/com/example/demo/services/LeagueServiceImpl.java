@@ -33,7 +33,7 @@ public class LeagueServiceImpl implements LeagueService{
     @Override
     public Boolean Delete(Integer id) {
         leagueRepository.deleteById(id);
-        return leagueRepository.findById(id).isPresent();
+        return !leagueRepository.findById(id).isPresent();
     }
 
 
